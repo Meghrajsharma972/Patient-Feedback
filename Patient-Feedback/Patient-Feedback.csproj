@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -2205,6 +2208,7 @@
     <Content Include="Images\images %281%29.jpeg" />
     <Content Include="Images\images.jpeg" />
     <Content Include="Images\images.png" />
+    <Content Include="Images\loginform.jpg" />
     <Content Include="ipdquestionHIN.aspx" />
     <Content Include="login.aspx" />
     <Content Include="opddetails.aspx" />
@@ -2318,6 +2322,7 @@
     <Content Include="Site.Master" />
     <Content Include="testpage.aspx" />
     <Content Include="Thankyou.aspx" />
+    <Content Include="UserDetail.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -2443,6 +2448,13 @@
     </Compile>
     <Compile Include="Thankyou.aspx.designer.cs">
       <DependentUpon>Thankyou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDetail.aspx.designer.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

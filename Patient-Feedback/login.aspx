@@ -1,172 +1,94 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="Patient_Feedback.login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <style>
-
-
-        html,body
-        {
-                      background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      height: 100%;
-                      font-family: 'Numans', sans-serif;
+        body {
+            background-image: url('Images/loginform.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end; /* Aligns the content to the right */
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            padding-right: 50px; /* Add some padding from the right edge */
         }
 
-       .container
-       {
-              height: 100%;
-              align-content: center;
-       }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
 
-       .card{
-             height: 500px;
-             margin-top: auto;
-             margin-bottom: auto;
-             width: 400px;
-             background-color: rgba(0,0,0,0.5) !important;
-       }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-      .social_icon span{
-           font-size: 70px;
-           margin-left: 10px;
-           color: #FFC312;
-      }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
 
-     .social_icon span:hover
-     {
-         color: white;
-         cursor: pointer;
-     }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
 
-     .card-header h3
-     {
-          color: white;
-     }
-                    
-      .social_icon
-      {
-           position: absolute;
-            right: 20px;
-          top: -45px;
-      }
-                    
-           .input-group-prepend span
-           {
-                    width: 70px;
-                    background-color: #FFC312;
-                    color: black;
-                    border:0 !important;
-           }
-                    
-         input:focus
-         {
-                    outline: 0 0 0 0  !important;
-                    box-shadow: 0 0 0 0 !important;
-                    
-         }
-                    
-         .remember{
-                    color: white;
-         }
-                    
-            .remember input
-            {
-                    width: 30px;
-                    height: 30px;
-                    margin-left: 15px;
-                    margin-right: 5px;
-            }
-                    
-           .login_btn
-           {
-                    color: black;
-                    background-color: #FFC312;
-                    width: 100px;
-           }                      
-            .login_btn:hover
-            {
-                    color: black;
-                    background-color: white;
-            }
-                    
-           .links
-           {  
-                    color: white;
-                    font-size:large;
-                    
-           }
-                    
-             .links a
-             {
-                    margin-left: 4px;
-                     font-size:large;
-             }
+        .login-container .login_btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFC312; /* Stylish yellow color */
+            color: black;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px; /* Added margin for spacing */
+            margin-right:60px;
+        }
 
+        .login-container .login_btn:hover {
+            background-color: white; /* Changes to white on hover */
+            color: black; /* Keeps text color black on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+        }
 
+        .footer {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 
-    <html>
-          <head>
-	<title>Login Page</title>
- 
-   
-	 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <div class="login-container">
+        <h2>Login</h2>
+        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="User ID" />
+        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password" />
+        <asp:Button ID="loginBtn" runat="server" CssClass="login_btn" Text="Login" OnClick="logButton_Click" />
 
-	 
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-<div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>Sign In</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
-			</div>
-			<div class="card-body">
-				<form>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
-						</div>
-						<input type="text" class="form-control" placeholder="username">
-						
-					</div>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
-						<input type="password" class="form-control" placeholder="password">
-					</div>
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div>
-					<div class="form-group">
-						<%--<input type="submit" value="Login" class="btn float-right login_btn">--%>
-                            <asp:Button ID="logButton" runat="server" class="btn float-right login_btn" Text="Login"  OnClick="Loginbtn"/>
-					</div>
-				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
+        <div class="footer">
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="createuser.aspx">Sign Up</a></p>
+        </div>
+    </div>
 </asp:Content>

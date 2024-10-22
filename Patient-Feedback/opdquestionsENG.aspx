@@ -162,10 +162,11 @@
                     <br />
                     
                       <%-- <input type="text" id="TextBox1" class="hidden form-control mt-3"  placeholder="Any Other Observation?" />--%>
-                       <input type="text" id="TextBox1" name="TextBox1"  class="hidden form-control mt-3" placeholder="Any Other Observation?" />
+                     <%-- <input type="text" id="TextBox1" name="TextBox1"  class="hidden form-control mt-3" placeholder="Any Other Observation?" />--%>
                     <%--  <button  type="button" id="Button1" CssClass="hidden btn btn-primary mt-2 ">Submit your Response</button>--%>
-                    <asp:Button ID="Button2" runat="server" CssClass=" hidden btn btn-primary mt-2" Text="Submit your Response" OnClick="Button1_Click" />
-
+                      <asp:TextBox ID="TextBox1" runat="server" CssClass="hidden form-control mt-3" Placeholder="Any Other Observation?"></asp:TextBox>
+   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"  ControlToValidate="TextBox1"  ErrorMessage="This field is required."  CssClass="error-message"  Display="Dynamic" ForeColor="Red" /><br />
+                       <asp:Button ID="Button2" runat="server" CssClass="hidden btn btn-primary mt-2 " OnClick="btnDoctorFedbackYES" Text="Submit your Response" />
                     
                     <div id="feedbackTable" class="hidden">
 
@@ -229,7 +230,8 @@
                             <button type="button" id="Button35">Submit your response</button>--%>
 
                                <input type="text" id="TextBox35" class="form-control mt-3" name="TextBox35"  placeholder="Any Other Observation?"/><br />
-                          <asp:Button ID="Button35" runat="server" class="btn btn-secondary mt-2"   Text="Submit your Response" />
+                         <%-- <asp:Button ID="Button35" runat="server" class="btn btn-secondary mt-2"   Text="Submit your Response" />--%>
+                              <asp:Button ID="Button35" runat="server"  class="btn btn-secondary mt-2"  OnClick="btnDoctorFedbackNO" Text="Submit your Response" />
                         </div>
                     </div>
                     </div>
@@ -253,6 +255,7 @@
                     
                  <%-- <input type="text" id="TextBox1" class="hidden" placeholder="Any Other Observation?" />--%>
                  <input type="text" id="txtNursingObservation1" name="txtNursingObservation1" class="form-control hidden mt-3" placeholder="Any Other Observation?" />
+
                     <%--  <button  type="button" id="Button1" class="hidden">Submit your Response</button>--%>
                     <asp:Button ID="Button1" runat="server" CssClass="hidden btn btn-primary mt-2 " OnClick="btnLabFeedbackYes" Text="Submit your Response" />
                     

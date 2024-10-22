@@ -169,8 +169,8 @@
                     <br />                    
                       <%-- <input type="text" id="TextBox1" class="hidden" placeholder="Any Other Observation?" />--%>
                      <%-- <input type="text" id="TextBox1" name="TextBox1"  class="hidden form-control mt-3" placeholder="Any Other Observation?" /> --%>
-                  <asp:TextBox ID="TextBox1" runat="server" CssClass="hidden form-control mt-3" Placeholder="Any Other Observation?"></asp:TextBox>
-   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"  ControlToValidate="TextBox1"  ErrorMessage="This field is required."  CssClass="error-message"  Display="Dynamic" ForeColor="Red" /><br />
+               <asp:TextBox ID="TextBox1" runat="server" CssClass="hidden form-control mt-3" Placeholder="Any Other Observation?"></asp:TextBox>
+ <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"  ControlToValidate="TextBox1"  ErrorMessage="This field is required."  CssClass="error-message"  Display="Dynamic" ForeColor="Red" /><br />
                                          
                     <%--  <button  type="button" id="Button1" class="hidden" onclick="Button1_Click">Submit your Response</button>--%>
                      <asp:Button ID="Button1" runat="server" CssClass="hidden btn btn-primary mt-2 " OnClick="DoctorFedbackYES" Text="Submit your Response" />

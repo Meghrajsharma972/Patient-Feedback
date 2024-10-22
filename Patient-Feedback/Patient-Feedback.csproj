@@ -2204,7 +2204,9 @@
     <Content Include="fontawsome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawsome\svgs\solid\z.svg" />
     <Content Include="Images\360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg" />
+    <Content Include="Images\delete.jpg" />
     <Content Include="Images\depositphotos_322579018-stock-photo-smiling-doctor-standing-on-grey.jpg" />
+    <Content Include="Images\Edit.jpg" />
     <Content Include="Images\images %281%29.jpeg" />
     <Content Include="Images\images.jpeg" />
     <Content Include="Images\images.png" />
